@@ -1,0 +1,265 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  font-family: robotoregular, sans-serif;
+}
+
+ul a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  min-width: 700px;
+}
+
+/*
+    You have to add min-width here, because it's the container for all the rest of the elements!
+    Otherwise, what happens is that if you try and set them on any individual section, it'll overflow and
+    behave in a not...desired way I guess. (in my case, setting it on nav would move it completely off-screen
+    once it hit that threshold).
+
+    but, since the body is the container, it'll basically say (already, i ain't getting any smaller) and introduce
+    the scroll effect on the entire container, not just the one weird bit that wants to be bigger than the actual
+    screen size is letting it be, causing the fuckery.
+ */
+
+/* NAVIGATION */
+
+nav {
+  width: 100%;
+  background-color: #1f2937;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+nav .smaller-container {
+  width: 1000px;
+  display: flex;
+}
+
+nav .smaller-container > * {
+  display: flex;
+  width: 100%;
+}
+
+nav p {
+  font-family: robotobold, sans-serif;
+  font-size: 24px;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 25px;
+}
+
+ul li {
+  flex-shrink: 0;
+}
+
+ul a {
+  color: #e5e7eb;
+}
+
+/* MAIN */
+
+main {
+  flex: 1;
+  /* I want it to take the rest of the space after the header and footer are accounted for, thus the flex: 1 */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main > * {
+  flex: 1;
+}
+
+/* MAIN - INITIAL CALL TO ACTION */
+
+.initial-call-to-action {
+  display: flex;
+  justify-content: center;
+  background-color: #1f2937;
+  color: white;
+}
+
+.initial-call-to-action .smaller-container {
+  width: 1000px;
+  display: flex;
+}
+
+.initial-call-to-action .smaller-container > * {
+  flex: 1;
+}
+
+.initial-call-to-action .image {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  background-color: #6d747d;
+  padding: 105px 0;
+}
+
+.initial-call-to-action .sign-up {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 180px;
+  gap: 5px;
+}
+
+.initial-call-to-action .sign-up p {
+  color: #e5e7eb;
+}
+
+.initial-call-to-action .sign-up button {
+  align-self: flex-start;
+  background-color: #3882f6;
+  color: white;
+  padding: 5px 40px;
+  border: 1px solid #3882f6;
+  border-radius: 5px;
+}
+
+.initial-call-to-action h1 {
+  font-family: robotobold, sans-serif;
+  font-size: 48px;
+  color: #f9faf8;
+  line-height: 1.2;
+}
+
+/* MAIN - COMPANY INFO */
+
+.company-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-info > .smaller-container {
+  width: 850px;
+}
+
+.company-info h2 {
+  font-family: robotobold, sans-serif;
+  font-size: 36px;
+  color: #1f2937;
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.company-info .cards {
+  flex: 1;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.company-info .card {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.company-info .card-text {
+  color: #4b5563;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.company-info .box {
+  height: 160px;
+  width: 160px;
+  border: 5px solid #3882f6;
+  border-radius: 10px;
+}
+
+/* MAIN - TESTIMONIAL */
+
+.testimonial {
+  background-color: #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial .smaller-container {
+  width: 790px;
+}
+
+.testimonial .thor-quote {
+  font-family: robotolight_italic, sans-serif;
+  font-size: 36px;
+}
+
+.testimonial .quote-credit {
+  font-family: robotoregular, sans-serif;
+  font-weight: bolder;
+  font-size: 24px;
+  text-align: right;
+  margin-right: 32px;
+}
+/* MAIN - FINAL CALL TO ACTION */
+
+.final-call-to-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.final-call-to-action .background-container {
+  background-color: #3882f6;
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  border-radius: 5px;
+}
+
+.final-call-to-action .smaller-container {
+  width: 790px;
+  display: flex;
+  align-items: center;
+}
+.final-call-to-action .smaller-container > *:not(button) {
+  flex: 1;
+}
+
+.final-call-to-action .call-to-action p:first-child {
+  font-size: 24px;
+}
+
+.final-call-to-action .smaller-container > button {
+  background-color: #3882f6;
+  font-size: 16px;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 40px;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 0;
+  background-color: #1f2937;
+  color: white;
+}
